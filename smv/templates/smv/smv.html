@@ -1,0 +1,23 @@
+{% extends 'smv/base.html' %}
+{% block body %}
+<div class="container">
+    <div class="container">
+    <div class="col-sm-6">
+    <div class=" panel panel-primary">
+    <div class="panel-heading"><h3>Standard Minute Value</h3></div>
+    <div class="panel-body">
+<form method="post" enctype="multipart/form-data">
+
+{% csrf_token %}
+    <table>
+{{ form.as_table }}
+        </table>
+<button type="submit">Submit</button>
+</form>
+            </div>
+    </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

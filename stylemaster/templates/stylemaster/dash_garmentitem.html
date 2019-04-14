@@ -1,0 +1,50 @@
+{% extends 'stylemaster/base.html' %}
+{% block body %}
+<h1 style="color:#ff4c17;">Garment Items</h1>
+
+ <div class="col-md-2"> item no. : </div> <div class="col-md-2 btn-primary">  MNM  </div>
+
+
+
+
+
+<br><br>
+
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Grp</th >
+    <th style="text-align: center;">Cost grp</th><th style="text-align: center;">Item Type</th>
+    <th style="text-align: center;">Item Grp</th><th style="text-align: center;">Product Grp</th>
+    <th style="text-align: center;">Material Code</th><th style="text-align: center;">Name</th>
+    <th style="text-align: center;">Description</th><th style="text-align: center;">Budget</th>
+    <th style="text-align: center;"> Price </th><th style="text-align: center;">UOM</th>
+    <th style="text-align: center;">Consumption</th><th style="text-align: center;">Waste</th>
+    <th style="text-align: center;">Remarks</th></tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.grp}}</td>
+       <td>{{ m.cost_Grp }}</td>
+       <td>{{ m.item_Type }}</td>
+       <td>{{ m.item_Grp }}</td>
+       <td>{{ m.product_grp }}</td>
+       <td>{{ m.material_Code }}</td>
+       <td>{{ m.name }}</td>
+       <td>{{ m.description }}</td>
+       <td>{{ m.budget }}</td>
+       <td>{{ m.price }}</td>
+       <td>{{ m.UOM }}</td>
+       <td>{{ m.consumption }}</td>
+       <td>{{ m.waste }}</td>
+           <td>{{ m.remarks }}</td>
+
+
+       </tr>
+{% endfor %}
+</table>
+
+
+    <br>
+    <br>
+
+    <br>
+{% endblock %}

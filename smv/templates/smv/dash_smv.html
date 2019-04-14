@@ -1,0 +1,40 @@
+{% extends 'smv/base.html' %}
+
+{% load mathfilters %}
+{% block body %}
+
+    <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Operations</th >
+    <th style="text-align: center;">Pick UP</th><th style="text-align: center;">Main process</th>
+    <th style="text-align: center;">Turn/Rotate</th><th style="text-align: center;">Dispose</th>
+    <th style="text-align: center;">Handling Allowances</th><th style="text-align: center;">Personal, Fatigue & Delay Allowances(%)</th>
+    <th style="text-align: center;">Personal Allowance (%)</th><th style="text-align: center;">Fatigue Allowance (%)</th>
+    <th style="text-align: center;"> Delay Allowance (%) </th><th style="text-align: center;">Complexity Type</th>
+    </tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.operation}}</td>
+       <td>{{ m.pick_in_sec }}</td>
+       <td>{{ m.main_Process_in_sec }}</td>
+       <td>{{ m.turn_in_sec }}</td>
+       <td>{{ m.dispose_in_sec }}</td>
+       <td>10</td>
+       <td>{{ m.personal_Allowance|add:m.fatigue_Allowance|add:m.delay_Allowance }}</td>
+       <td>{{ m.personal_Allowance }}</td>
+       <td>{{ m.fatigue_Allowance }}</td>
+       <td>{{ m.delay_Allowance }}</td>
+       <td>{{ m.complexity_Factor }}</td>
+
+
+
+       </tr>
+{% endfor %}
+</table>
+
+
+    <br>
+    <br>
+
+    <br>
+{% endblock %}

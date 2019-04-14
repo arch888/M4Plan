@@ -1,0 +1,36 @@
+{% extends 'smv/base.html' %}
+{% load my_post %}
+{% block body %}
+	
+    <h2><a href="{% url 'smv' %}"><h2>Add Operation</h2></a>
+
+    <h3>Planned capacity  560</h3>
+     <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">STANDARD OPERATIONS</th >
+    <th style="text-align: center;">MACHINE TYPE/ FOLDER/PRESSURE FOOT</th><th style="text-align: center;">SEAM ALLOWANCE</th>
+    <th style="text-align: center;">S.A.M</th><th style="text-align: center;">NO. OF M/CS</th>
+    <th style="text-align: center;">Solid</th><th style="text-align: center;">Check</th>
+
+    </tr></thead>
+	
+   {% for m in a %}
+   {#% fun forloop.counter sam %#}
+   {% fun sam forloop.counter0  %}
+       <tr style="text-align: center">
+       <td >{{ m.operation }}</td>
+       <td>{{ m.machine }}</td>
+       <td> - </td>
+	   <td>{% fun sam forloop.counter0 %}</td>
+	   <td>{% fun mcs forloop.counter0 %}</td>
+       <td>1</td>
+       <td>1</td>
+       </tr>
+{% endfor %}
+</table>
+    <br>
+    <br>
+
+    <br>
+	<h2><a href="$"><h2>Create OB</h2></a>
+{% endblock %}

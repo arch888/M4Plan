@@ -1,0 +1,64 @@
+{% extends 'smv/base.html' %}
+{% load my_post %}
+{% block body %}
+
+    <a href="{% url 'smv' %}"><h2>Add Operation</h2></a>
+	<a href="{% url 'ob' %}"><h2>Create OB</h2></a>
+    <h2 style="color: red;">OPERATION BULLETINE : PRODUCT FAMILY MATRIX</h2>
+    <h3>Planned capacity  560</h3>
+     <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">S No.</th ><th style="text-align: center;">STANDARD OPERATIONS</th >
+    <th style="text-align: center;">Teufel CHECKS</th ><th style="text-align: center;">Laguardia SOLID</th >
+    <th style="text-align: center;">Dunkan CHECKS</th ><th style="text-align: center;">Wasintino1 CHECKS</th >
+    <th style="text-align: center;">Wasintino2 CHECKS</th ><th style="text-align: center;"> CT - Solids Drop5</th >
+    <th style="text-align: center;"> CT - Checks Drop5</th ><th style="text-align: center;">CT - DINNER SUIT DROP5</th >
+    <th style="text-align: center;">CT - DINNER SUIT DROP4</th ><th style="text-align: center;">WSLEE MAN</th >
+    <th style="text-align: center;">Wasintino</th ><th style="text-align: center;">WE - NOS 9A</th >
+    <th style="text-align: center;">WE - NOS 9B</th ><th style="text-align: center;">WE - SH09</th >
+    <th style="text-align: center;">MALIK PI-1592</th ><th style="text-align: center;">MALIK - PL 1323B</th >
+    <th style="text-align: center;">CT DINNER SUIT DROP4</th ><th style="text-align: center;">CT NOSS DROP5</th >
+    <th style="text-align: center;">CT NOSS DROP6</th ><th style="text-align: center;"></th >
+    <th style="text-align: center;"></th ><th style="text-align: center;">JAEGER</th >
+    <th style="text-align: center;">Moda</th >
+    </tr></thead>
+	
+	{% for i in a %}
+	{{ i.sec }}
+   {#% fun forloop.counter sam %#}
+   {#% fun sam forloop.counter0  %#}
+       <tr style="text-align: center">
+	   <td>{{ forloop.counter }}</td>
+       <td>{{ i.oper }}
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+       <td>Y</td>
+
+       </tr>
+	{% endfor %}
+</table>
+    <br>
+    <br>
+
+    <br>
+{% endblock %}

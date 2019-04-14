@@ -1,0 +1,43 @@
+{% extends 'material/base.html' %}
+{% block body %}
+      <h2 align="center" style="color:#ff4c17;">Materials availability</h2>
+<h4>Date : {{ d }}</h4>
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Item</th >
+    <th style="text-align: center;">Shell Fabric</th><th style="text-align: center;">Lining Fabric</th>
+    <th style="text-align: center;">Trim Fabric</th><th style="text-align: center;">Fusing</th>
+    <th style="text-align: center;">Trms</th><th style="text-align: center;">Thread</th>
+    <th style="text-align: center;">Button</th><th style="text-align: center;">Brand Label</th>
+    <th style="text-align: center;">Fit Label</th><th style="text-align: center;">Size Label</th>
+    <th style="text-align: center;">Wash Care Label</th><th style="text-align: center;">Hangtag</th>
+    <th style="text-align: center;">Polybag</th><th style="text-align: center;">Carton</th>
+    <th style="text-align: center;">Carton Sticket</th><th style="text-align: center;">Pallet</th>
+    <th style="text-align: center;">Corner Protection</th></tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.item_no }}</td>
+       <td>{{ m.shell_fabric }}</td>
+       <td>{{ m.lining_fabric }}</td>
+       <td>{{ m.trim_fabric }}</td>
+       <td>{{ m.fusing }}</td>
+       <td>{{ m.trims }}</td>
+       <td>{{ m.thread }}</td>
+       <td>{{ m.button }}</td>
+       <td>{{ m.brand_label }}</td>
+       <td>{{ m.fit_label }}</td>
+       <td>{{ m.size_label }}</td>
+       <td>{{ m.wash_care_label }}</td>
+       <td>{{ m.hangtag }}</td>
+       <td>{{ m.polybag }}</td>
+       <td>{{ m.carton }}</td>
+       <td>{{ m.carton_sticket }}</td>
+       <td>{{ m.pallet }}</td>
+       <td>{{ m.corner_protection }}</td>
+       </tr>
+{% endfor %}
+</table>
+
+
+    <br>
+{% endblock %}

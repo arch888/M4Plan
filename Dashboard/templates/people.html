@@ -1,0 +1,17 @@
+{# tutorial/templates/tutorial/people.html #}
+{% load render_table from django_tables2 %}
+<!doctype html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    </head>
+    <body>
+    <div class="table-responsive">
+    <table class = "table table-bordered">
+        {% render_table table %}
+    </table>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+{% extends 'stylemaster/base.html' %}
+{% block body %}
+<h1 style="color:#ff4c17;">Order Details</h1>
+
+ <div class="col-md-2"> item no. : </div> <div class="col-md-2 btn-primary">  MNM  </div>
+
+
+
+
+
+<br><br>
+
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">CO Type</th >
+    <th style="text-align: center;">Buyer</th><th style="text-align: center;">Buyer Style</th>
+    <th style="text-align: center;">Buyer PO</th><th style="text-align: center;">Type</th>
+    <th style="text-align: center;">PO Date</th><th style="text-align: center;">CO Number</th>
+    <th style="text-align: center;">CO Qty</th><th style="text-align: center;">Inv Qty</th>
+    <th style="text-align: center;"> % </th><th style="text-align: center;">Ex-Factory</th>
+    <th style="text-align: center;">Delivery Method</th><th style="text-align: center;">Delivery Terms</th>
+    <th style="text-align: center;">Remarks</th><th style="text-align: center;">LS</th>
+    <th style="text-align: center;">HS</th></tr></thead>
+   {% for m in a %}
+       <tr style="text-align: center">
+<td >{{ m.c_o_type}}</td>
+       <td>{{ m.buyer }}</td>
+       <td>{{ m.buyer_style }}</td>
+       <td>{{ m.buyer_p_o }}</td>
+       <td>{{ m.type }}</td>
+       <td>{{ m.p_o_date }}</td>
+       <td>{{ m.c_o_number }}</td>
+       <td>{{ m.c_o_qty }}</td>
+       <td>{{ m.inv_qty }}</td>
+       <td>{{ m.percent }}</td>
+       <td>{{ m.ex_factory }}</td>
+       <td>{{ m.delivery_method }}</td>
+       <td>{{ m.delivery_terms }}</td>
+           <td>{{ m.remarks }}</td>
+       <td>{{ m.l_s  }}</td>
+       <td>{{ m.h_s }}</td>
+
+
+       </tr>
+{% endfor %}
+</table>
+
+
+    <br>
+    <br>
+
+    <br>
+{% endblock %}

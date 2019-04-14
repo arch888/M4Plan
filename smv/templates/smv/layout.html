@@ -1,0 +1,26 @@
+{% extends 'smv/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+
+<h2 style="color: red;text-align: center">{{ a }}</h2>
+<table class="table">
+{% for i in q %}
+
+{%  if forloop.counter|divisibleby:2 %}
+
+    <!--<td class="col-md-4"></td>-->
+      <td class="col-md-3"></td>
+<td class="col-md-4"><img style="position: absolute; right: auto;" src=" {% static 'images/a.png' %}" alt="layout">
+    <br><br><br><br><br><br><br><br>
+    <div style="position: absolute;right: 200px ;"><p><b>Machine : </b>{{ i.machine }}</p></div></td>
+
+
+{% else %}
+<tr></tr>
+    <td class="col-md-4"><img  src=" {% static 'images/a.png' %}" alt="layout"><div style="text-align: center"><p><b>Machine : </b>{{ i.machine }}</p></div></td>
+
+{% endif %}
+{% endfor %}
+</table>
+{% endblock %}

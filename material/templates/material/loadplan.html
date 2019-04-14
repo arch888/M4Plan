@@ -1,0 +1,57 @@
+{% extends 'material/base.html' %}
+{% load mathfilters %}
+{% block body %}
+
+<h1 style="color:#ff4c17;">Loading Plan</h1>
+
+ <div class="col-md-2"> Factory : </div> <div class="col-md-2 btn-primary">  Garment  </div>
+    <div class="col-md-2"> Category : </div> <div class="col-md-2 btn-primary">  Jacket  </div>
+<div class="col-md-2"> Sub-Category : </div> <div class="col-md-2 btn-primary">  formal  </div>
+
+
+
+<br><br>
+
+  <table class="table table-bordered table-striped table-hover table-responsive" >
+<thead class="thead-dark">
+<tr  class="btn-primary"><th style="text-align: center;">Date</th >
+    <th style="text-align: center;">Item</th><th style="text-align: center;">Description</th>
+    <th style="text-align: center;">Planned</th><th style="text-align: center;">Actual</th>
+    </tr></thead>
+
+    <tr style="text-align: center">
+
+{% for i in date %}
+<td style="text-align: center" class="col-md-3">{{ i }}</td>
+		{% for m in j %}
+			{% if forloop.parentloop.counter == forloop.counter and forloop.parentloop.counter <= 16 %}
+				<td style="text-align: center">{{ item.0 }}</td>
+				<td style="text-align: center">xyz</td>
+				<td style="text-align: center">{{ m }}</td>
+				
+			{% elif forloop.parentloop.counter == forloop.counter and forloop.parentloop.counter >= 17 %}
+				<td style="text-align: center;">{{ item.1 }}</td>
+				<td style="text-align: center">xyz</td>
+				<td style="text-align: center">{{ m }}</td>
+			{% endif %}
+		{% endfor %}
+		
+		{% for n in a %}
+			{% if forloop.parentloop.counter == forloop.counter and forloop.parentloop.counter <= 16 %}
+				<td style="text-align: center">{{ n }}</td>				
+			{% elif forloop.parentloop.counter == forloop.counter and forloop.parentloop.counter >= 17 %}
+				<td style="text-align: center">{{ n }}</td>
+			{% endif %}
+		{% endfor %}
+		
+       </tr>
+{% endfor %}
+</table>
+    <br>
+    <br>
+
+    <br>
+{% endblock %}
+
+			
+

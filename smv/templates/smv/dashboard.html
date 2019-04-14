@@ -1,0 +1,26 @@
+{% extends 'smv/base.html' %}
+{% load staticfiles %}
+{% block body %}
+
+<h2 style="color: red;text-align: center">{{ a }}</h2>
+<table class="table">
+{% for i,j in list %}
+
+{%  if forloop.counter|divisibleby:2 %}
+
+    <!--<td class="col-md-4"></td>-->
+      <td class="col-md-3"></td>
+<td class="col-md-4"><a href="{% url 'desc' %}" ><img style="position: absolute; right: auto;" src=" {% static 'images/DNLS.jpg' %}" alt="layout"></a>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div style="position: absolute;left:1000px ;"><p><b>Operator : </b>{{ i.use }}</p><p><b>Operation : </b>{{ i.operation }}</p>
+        <p><b>Machine : </b>{{ j.machine }}</p><p><b>Type : </b>Piece Rate/Salaried</p></div></td>
+
+
+{% else %}
+<tr></tr>
+    <td class="col-md-4"><a href="{% url 'desc' %}" ><img  src=" {% static 'images/SNLS.jpg' %}" alt="layout"></a><div style="text-align: center"><p><b>Operator : </b>{{ i.use }}</p>
+        <p><b>Operation : </b>{{ i.operation }}</p><p><b>Machine : </b>{{ j.machine }}</p><p><b>Type : </b>Piece Rate/Salaried</p></div></td>
+{% endif %}
+{% endfor %}
+</table>
+{% endblock %}
